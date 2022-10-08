@@ -1,0 +1,22 @@
+.fullPage {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 220px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.loader p {
+    margin-top: 40px;
+    color: #7684a5;
+}

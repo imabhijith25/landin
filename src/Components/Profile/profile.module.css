@@ -1,0 +1,116 @@
+.profileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    text-align: center;
+    height: 500px;
+}
+
+.buttonContainer {
+
+    max-width: 204px;
+    width: 100%;
+}
+
+.head {
+    font-weight: 700;
+
+
+}
+
+.input {
+    margin: 20px 0px 10px 0px;
+    padding: 7px;
+    width: 100%;
+
+
+}
+
+.inputText {
+    margin: 10px 0px;
+    padding: 10px 7px;
+    width: 100%;
+
+
+}
+
+.textArea {
+    height: 86px;
+    resize: none;
+}
+
+.profileArea {
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    max-width: 200px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profileArea img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+.profileArea button {
+    margin-top: 10px;
+    border: 2px solid;
+    width: 80%;
+    border-radius: 6px;
+    background-color: #ebcd60e3;
+    padding: 7px;
+    font-weight: 800 !important;
+}
+
+.profileArea button:hover {
+    background-color: #ebcd60;
+}
+
+.details {
+    max-width: 340px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.puff {
+    position: absolute;
+    top: 20px
+}
+
+.error {
+    color: red;
+    margin: 5px 0px;
+}
+
+@media all and (max-width:600px) {
+    .profileContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 10px;
+
+    }
+
+    .buttonContainer {
+
+        max-width: 100%;
+    }
+
+    .buttonContainer input {
+        padding: 10px 7px;
+        max-width: 204px;
+    }
+
+    .details {
+        max-width: 260px;
+    }
+}

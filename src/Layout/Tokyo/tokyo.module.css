@@ -1,0 +1,140 @@
+:root {
+    --overallBackground: white;
+    --profileBackground: white;
+
+}
+
+.overallContainer {
+    background-color: var(--overallBackground);
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentLocation {
+    display: flex;
+    justify-content: center;
+    column-gap: 12px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 460px;
+    padding: 20px 20px 5px 20px;
+}
+
+.tabs {
+    cursor: pointer;
+    width: 33%;
+    height: 5px;
+    border-radius: 20px;
+
+
+}
+
+.selected {
+    background-color: rgb(81, 71, 71);
+    border: 2px solid rgb(81, 71, 71);
+}
+
+.notSelected {
+    background-color: rgb(255, 255, 255);
+}
+
+.cardContainer {
+    margin-top: 20px;
+    max-width: 460px;
+    width: 100%;
+    height: 560px;
+
+}
+
+.socialContainer {
+    margin-top: 10px;
+    background-color: var(--profileBackground);
+    height: 11%;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    column-gap: 14px;
+    align-items: center;
+
+}
+
+.socialContainer img {
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.profile {
+    height: 89%;
+    position: relative;
+    border-radius: 6px;
+    background-position: 0px -50px;
+
+}
+
+.profileContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--profileBackground);
+    opacity: 0.8;
+    max-width: 220px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 6px;
+
+}
+
+.profileContainer img {
+    max-width: 105px;
+    max-height: 105px;
+    border-radius: 100;
+    margin-bottom: 17px;
+}
+
+.profileContainer h3 {
+    font-weight: 900 !important;
+    font-size: 22px;
+
+}
+
+
+.aboutContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--profileBackground);
+    opacity: 0.8;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+
+}
+
+.links {
+    border: 2px solid;
+    margin: 10px 0px;
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.links:hover {
+    border: 2px solid #a59999;
+}

@@ -1,0 +1,110 @@
+html {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px auto;
+  height: 100%;
+
+
+}
+
+h1,
+h2,
+h3 {
+  margin: 0px;
+}
+
+h3 {
+  font-weight: 600 !important;
+}
+
+p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-weight: 600 !important;
+  font-family: 'Inter', sans-serif;
+}
+
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+.logo {
+  font-family: "Poppins", "sans-serif";
+  font-weight: 900;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.textbox {
+  border: 3px solid;
+  color: #1d1d1d;
+  background-color: #F4F4F4;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.button {
+  background-color: #1d1d1d;
+  color: white;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
+.button[disabled=disabled],
+.button:disabled {
+  background-color: #1d1d1dac;
+  cursor: not-allowed;
+}
+
+.message {
+
+  text-align: center;
+  background-color: rgba(235, 204, 96, 0.88);
+  color: black;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  border: none;
+}
+
+.message p {
+  font-weight: 800 !important;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .container {
+    padding: 0 0px;
+  }
+}

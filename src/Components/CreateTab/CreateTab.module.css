@@ -1,0 +1,31 @@
+.selectedTab {
+    display: flex;
+    column-gap: 20px;
+}
+
+.tabContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.tab {
+    cursor: pointer;
+
+}
+
+.tab p {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.selected {
+    color: black;
+}
+
+.notSelected {
+    color: #827C7C;
+}
+
+.notSelected:hover {
+    color: black;
+}

@@ -1,0 +1,51 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+
+}
+
+.input {
+    padding: 10px 7px;
+    width: 100%;
+}
+
+
+.formControl {
+    padding: 10px;
+}
+
+.formWrapper {
+    max-width: 280px;
+    width: 100%;
+}
+
+.checkUrl {
+    margin: 10px;
+    padding: 10px 0px;
+
+}
+
+.message {
+    text-align: center;
+    margin: 20px 0px 15px 0px;
+
+}
+
+.message p {
+    font-weight: 800;
+}
+
+.message a {
+    text-decoration: none;
+    color: #3e2177a9;
+}
+
+.error {
+    padding: 4px 8px 0px 2px;
+}
+
+.error p {
+    color: rgb(217, 49, 49)
+}
