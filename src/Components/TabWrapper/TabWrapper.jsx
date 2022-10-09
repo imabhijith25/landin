@@ -7,6 +7,7 @@ import Theme from "../Theme/Theme"
 import Profile from "../Profile/Profile"
 import Links from "../Links/Links"
 import Social from "../Social/Social"
+import Publish from "../Publish/Publish"
 export const TabContext = React.createContext()
 
 const initialState = {
@@ -48,18 +49,26 @@ const TabWrapper = ({ children }) => {
         <>
             <TabContext.Provider value={{ selectedTab, dispatch }}>
                 <div className={cn("container", styles.tabContainer)}>
-                    {children}
-                    <div className={styles.tabItem}>
-                        {selectedTab?.tab == 0 && <MakeUrl />}
-                        {selectedTab?.tab == 1 && <Theme />}
-                        {selectedTab?.tab == 2 && <Profile />}
-                        {selectedTab?.tab == 3 && <Links />}
-                        {selectedTab?.tab == 4 && <Social />}
-                    </div>
+                    {selectedTab?.tab != 5 &&
+
+                        <>
+                            {children}
+                            <div className={styles.tabItem}>
+                                {selectedTab?.tab == 0 && <MakeUrl />}
+                                {selectedTab?.tab == 1 && <Theme />}
+                                {selectedTab?.tab == 2 && <Profile />}
+                                {selectedTab?.tab == 3 && <Links />}
+                                {selectedTab?.tab == 4 && <Social />}
+
+                            </div>
+
+                        </>
 
 
-
+                    }
+                    {selectedTab?.tab == 5 && <Publish />}
                 </div>
+
             </TabContext.Provider>
         </>
     );

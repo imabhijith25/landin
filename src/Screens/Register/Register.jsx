@@ -2,7 +2,7 @@ import cn from 'classnames'
 import { useState } from 'react';
 import { useCallback } from 'react';
 import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { Link, useSearchParams } from 'react-router-dom';
 import { register } from '../../API/authentication';
 import styles from "./register.module.css"
@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux'
 import { setUserData } from '../../Redux/userSlice';
 const Register = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [params] = useSearchParams()
     const [loader, setLoader] = useState(false)
     const [checkUrl, setCheckUrl] = useState("")
@@ -40,16 +41,19 @@ const Register = () => {
             const val = await register(form)
             if (val?.data?.success) {
                 setLoader(false)
-                dispatch(setUserData(val?.data?.token))
+                dispatch(setUserData(val?.data?.data))
+                localStorage.setItem("userToken", val?.data?.token)
+                navigate("/dashboard", { replace: true })
             }
             else {
-                console.log(val)
+
                 setError({ ...error, submit: val?.response?.data?.message })
                 setLoader(false)
             }
         }
         else {
             setError(error)
+            setLoader(false)
         }
 
     }

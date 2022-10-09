@@ -97,10 +97,15 @@ const Social = () => {
             let key = keyArray[i]
 
             if ((finalObj[key] == null || finalObj[key] == "") && key != "profilePicUrl" && key != "post") {
+                flagKey = tabNameIndex[key]
                 setField(tabNameIndex[key])
                 break
             }
             i++
+        }
+
+        if (flagKey == null) {
+            val.dispatch({ type: "incrementTab" })
         }
 
 

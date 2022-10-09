@@ -1,0 +1,51 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.success {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.emoji {
+    font-size: 65px;
+}
+
+.success h3 {
+    margin-top: 10px;
+    font-weight: 800 !important;
+    font-size: 24px;
+}
+
+.success p {
+    font-weight: 700 !important;
+    margin-top: 20px;
+}
+
+
+.msg {
+    margin-top: 20px;
+}
+
+.msg p {
+    margin-top: 5px;
+}
+
+.success a {
+
+
+    color: white;
+    text-decoration: none
+}
+
+.action {
+    margin-top: 20px;
+}
+
+.action button {
+    margin-top: 5px;
+    padding: 10px 7px;
+    max-width: 204px;
+    width: 100%;
+}

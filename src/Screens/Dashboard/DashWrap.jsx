@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { createContext } from "react";
 import DashView from "./DashView";
+import MyProfileDash from "./MyProfileDash";
 
 export const DashContext = createContext()
 const intitalState = {
@@ -22,6 +23,7 @@ const DashWrap = ({ children }) => {
             <div>
                 {children}
                 {dashTab?.tab == 0 && <DashView />}
+                {dashTab?.tab == 1 && <MyProfileDash />}
             </div>
 
         </DashContext.Provider>

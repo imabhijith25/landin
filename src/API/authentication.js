@@ -12,3 +12,14 @@ export const register = async (payload) => {
     }
 
 }
+
+
+export const LoginApi = async (payload) => {
+    try {
+        const result = await axiosInstance.post("/user/loginUser", payload)
+        return result
+    }
+    catch (err) {
+        return err;
+    }
+}

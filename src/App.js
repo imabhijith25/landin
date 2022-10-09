@@ -9,7 +9,7 @@ import Login from "./Screens/Login/Login";
 import Register from "./Screens/Register/Register";
 import Create from "./Screens/Create/Create";
 import Tokyo from "./Layout/Tokyo/Tokyo";
-import Splash from "./Screens/Splash/Splash";
+import { Splash } from "./Screens/Splash/Splash";
 import Dashboard from "./Screens/Dashboard/Dashboard";
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
