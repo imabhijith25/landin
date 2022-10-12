@@ -15,7 +15,7 @@ const themeDictionary = {
         },
         "love": {
             "--profileBackground": "#001220",
-            "--overallBackground": "#0B202F"
+            "--overallBackground": "#103440"
         }
     }
 
@@ -26,14 +26,14 @@ const themeDictionary = {
     "tokyo": {
 
         "night": {
-            "location": "./images/Tokyo/night.svg"
+            "location": "/images/Tokyo/night.svg"
         },
 
         "winter": {
-            "location": "./images/Tokyo/winter.svg"
+            "location": "/images/Tokyo/winter.svg"
         },
         "love": {
-            "location": "./images/Tokyo/love.svg"
+            "location": "/images/Tokyo/love.svg"
 
         }
     }
@@ -41,12 +41,17 @@ const themeDictionary = {
 }
 
 export const getThemeVariables = (themeName) => {
-    const splittedThemeName = themeName?.split("_")
-    return themeDictionary[splittedThemeName[0]][splittedThemeName[1]]
+    if(themeName){
+        const splittedThemeName = themeName?.split("_")
+        return themeDictionary[splittedThemeName[0]][splittedThemeName[1]]
+    }
 
 }
 
 export const getThemeBackground = (themeName) => {
-    const splittedThemeName = themeName?.split("_")
-    return themeBackground[splittedThemeName[0]][splittedThemeName[1]]
+    if(themeName){
+        const splittedThemeName = themeName?.split("_")
+        return themeBackground[splittedThemeName[0]][splittedThemeName[1]]
+    }
+
 }

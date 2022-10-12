@@ -1,15 +1,17 @@
-import styles from "./tokyo.module.css"
+import styles from "./tokyo.module.css";
+import { useContext } from "react";
+import { TokyoContext } from "../../Screens/Splash/Splash";
 const Profile = () => {
+    const tokyoData = useContext(TokyoContext);
+    console.log(tokyoData);
     return (
         <>
-
             <div className={styles.profileContainer}>
-                <img src="./images/Sample/elane.png" />
-                <h3>Elaine</h3>
+                <img src={tokyoData?.profilePicUrl} />
+                <h3>{tokyoData?.aboutUs?.name}</h3>
             </div>
-
         </>
     );
-}
+};
 
 export default Profile;

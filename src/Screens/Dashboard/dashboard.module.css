@@ -85,6 +85,7 @@
 }
 
 .card {
+    position: relative;
     width: 100%;
     border-radius: 6px;
     overflow: hidden;
@@ -128,6 +129,26 @@
 
 }
 
+.sampleButton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid;
+    color: black;
+    padding: 7px;
+
+    font-weight: 900 !important;
+    border-radius: 6px;
+    background-color: #ebcd60e3;
+    cursor: pointer;
+}
+
+.sampleButton:hover {
+
+    background-color: #ebcd60;
+
+}
 
 .modalContent {
     background-color: #fefefe;
@@ -213,7 +234,11 @@
     width: 100%;
     cursor: pointer;
 }
-
+@media all and (max-width:1000px) {
+    .cardWrapper {
+        width: 50%;
+    }
+}
 @media all and (max-width:600px) {
     .dashTabs {
         padding: 0px 15px;
@@ -226,4 +251,19 @@
     .modal {
         padding: 100px 10px 0px 10px;
     }
+    .sampleButton {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 2px solid;
+        color: black;
+        padding: 7px;
+        font-weight: 900 !important;
+        border-radius: 6px;
+        background-color: #ebcd60e3;
+        cursor: pointer;
+    }
+
 }
+

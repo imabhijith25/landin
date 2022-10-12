@@ -44,15 +44,26 @@ function App() {
             }
             />
 
-            <Route path="/u" exact element={
+            <Route path="/u/:url" exact element={
               <Splash>
                 <Tokyo />
               </Splash>
 
 
-
+ 
             }
             />
+            
+            <Route path="/amy" exact element={
+              <Splash>
+                <Tokyo />
+              </Splash>
+
+
+ 
+            }
+            />
+            
             <Route path="/dashboard" exact element={
               <Page>
                 <Dashboard />
