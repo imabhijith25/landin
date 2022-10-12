@@ -19,7 +19,7 @@ const Publish = () => {
             setLoader(false)
             setSuccess(true)
             setData(re?.data)
-        }
+        } 
         else {
             // setLoader(false)
 

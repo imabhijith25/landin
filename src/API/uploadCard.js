@@ -24,3 +24,14 @@ export const uploadCard = async (payload) => {
 
 
 }
+
+export const checkIfCardisAvailable = async(name)=>{
+    try{
+        const resp = await axiosInstance.post("/card/checkForCards",{url:name});
+        return resp
+
+    }
+    catch(err){
+        return err
+    }
+}

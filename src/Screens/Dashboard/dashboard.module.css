@@ -87,9 +87,8 @@
 .card {
     width: 100%;
     border-radius: 6px;
-    translate: transform 2px ease;
     overflow: hidden;
-    height: 100%;
+
 }
 
 .card img {
@@ -97,13 +96,9 @@
     height: 100%;
     border-radius: 6px;
     overflow: hidden;
-    transition: transform 0.5s ease;
     cursor: pointer;
 }
 
-.card img:hover {
-    transform: scale(1.3, 1.3);
-}
 
 .pagesHeader {
     text-align: center;
@@ -136,6 +131,7 @@
 
 .modalContent {
     background-color: #fefefe;
+    position: relative;
     margin: auto;
     padding: 20px;
     border-radius: 6px;
@@ -144,7 +140,12 @@
     text-align: center;
 
 }
-
+.closeButton{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
 .modalContent .heading {
     text-align: center;
 }

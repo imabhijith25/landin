@@ -22,7 +22,7 @@ const themeDictionary = {
 
 
 }
-const themeBackground = {
+ const themeBackground = {
     "tokyo": {
 
         "night": {

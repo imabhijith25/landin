@@ -29,7 +29,7 @@
 
 .input {
     margin: 20px 0px 10px 0px;
-    padding: 7px;
+    padding: 10px 7px;
     width: 100%;
     max-width: 304px;
 
@@ -45,7 +45,9 @@
     margin-top: 20px;
 }
 
-
+.urlerror{
+    color: rgb(175, 23, 23);
+}
 @media all and (max-width:600px) {
     .urlContainer {
         display: flex;
