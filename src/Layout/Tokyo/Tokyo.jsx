@@ -11,6 +11,7 @@ import styles from "./tokyo.module.css";
 import cn from "classnames";
 import { useCallback, useContext } from "react";
 import { TokyoContext } from "../../Screens/Splash/Splash";
+import { httpParser } from "../../Utils/httpParser";
 const Tokyo = ({ sample }) => {
     const tokyoData = useContext(TokyoContext);
     console.log(tokyoData);
@@ -107,7 +108,10 @@ const Tokyo = ({ sample }) => {
                                 src={`/images/social/${item?.title?.toLowerCase()}.svg`}
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    window.open(item?.url, "_blank");
+                                    window.open(
+                                        httpParser(item?.url),
+                                        "_blank"
+                                    );
                                 }}
                             />
                         ))}

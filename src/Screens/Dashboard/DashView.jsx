@@ -10,6 +10,7 @@ import { useRef } from "react";
 import { deleteCard } from "../../API/deleteCard";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import copy from "copy-to-clipboard";
 const DashView = () => {
     const allcards = useContext(AllCardContext);
     console.log(allcards);
@@ -181,7 +182,26 @@ const DashModal = ({ data, handleClose, handleRemove }) => {
                     <div className={styles.heading}>
                         <p>u/{data?.data?.url}</p>
                     </div>
-                    <p>Choose your action</p>
+                    <p
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                            copy(
+                                `${window.location.origin}/u/${data?.data?.url}`
+                            );
+                            toast.info(" Copied to clipboard", {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                                theme: "light",
+                            });
+                        }}
+                    >
+                        ✂️ <u>Copy this URL</u>
+                    </p>
 
                     <div className={cn(styles.actionButton)}>
                         <input

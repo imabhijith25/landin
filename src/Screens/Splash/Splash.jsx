@@ -10,8 +10,9 @@ import { createContext } from "react";
 export const TokyoContext = createContext();
 export const Splash = ({ children }) => {
     //initialise sample data here
-    const { url } = useParams();
+    const { url, theme } = useParams();
     const [data, setData] = useState(null);
+    const [showInfo, setShowInfo] = useState(false);
     let sampleData = {
         aboutUs: {
             name: "Amy",
@@ -50,6 +51,9 @@ export const Splash = ({ children }) => {
         themeName: "tokyo_night",
     };
     const [status] = useFetch(`/card/getCard?url=${url}`);
+    const hideInfoShow = () => {
+        setShowInfo(false);
+    };
     console.log(status);
     useEffect(() => {
         if (url && status?.loading == false) {
@@ -62,10 +66,21 @@ export const Splash = ({ children }) => {
             };
             console.log(parsedData);
             setData(parsedData);
-        } else {
+        } else if (theme) {
+            sampleData.themeName = theme;
             setData(sampleData);
         }
     }, [status, url]);
+
+    useEffect(() => {
+        if (localStorage?.getItem("visited")) {
+            setShowInfo(false);
+        } else {
+            localStorage?.setItem("visited", true);
+            setShowInfo(true);
+        }
+    }, []);
+
     if (status?.loading) {
         return (
             <>
@@ -78,7 +93,8 @@ export const Splash = ({ children }) => {
         return (
             <>
                 <TokyoContext.Provider value={data}>
-                    <div>
+                    <div className={styles.splashContainer}>
+                        {showInfo && <Info hideInfoShow={hideInfoShow} />}
                         {children}
                         {/* <FullPageLoader /> */}
                     </div>
@@ -98,5 +114,24 @@ export const FullPageLoader = ({ msg }) => {
                 </div>
             </div>
         </>
+    );
+};
+
+const Info = ({ hideInfoShow }) => {
+    return (
+        <div
+            className={styles.opaque}
+            onClick={(e) => {
+                e.stopPropagation();
+                hideInfoShow();
+            }}
+        >
+            <div className={styles.firstHalf}>
+                <p>Tap left to move back</p>
+            </div>
+            <div className={styles.secondHalf}>
+                <p>Tap right to move forward</p>
+            </div>
+        </div>
     );
 };

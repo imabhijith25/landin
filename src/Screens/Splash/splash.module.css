@@ -20,3 +20,43 @@
     margin-top: 40px;
     color: #7684a5;
 }
+
+.opaque{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(11, 11, 11, 0.729);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.splashContainer{
+    position: relative;
+}
+
+.firstHalf{
+
+}
+.secondHalf{
+
+}
+.firstHalf p{
+    color: white;
+    animation: fadeIn ease 1s;
+}
+.secondHalf p{
+    color: white;
+    animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -40,7 +40,7 @@ function App() {
                             path="/create"
                             exact
                             element={
-                                <Page>
+                                <Page authenticate={true}>
                                     <Create />
                                 </Page>
                             }
@@ -57,7 +57,7 @@ function App() {
                         />
 
                         <Route
-                            path="/amy"
+                            path="/amy/:theme"
                             exact
                             element={
                                 <Splash>
@@ -70,7 +70,7 @@ function App() {
                             path="/dashboard"
                             exact
                             element={
-                                <Page>
+                                <Page authenticate={true}>
                                     <Dashboard />
                                 </Page>
                             }
@@ -80,7 +80,7 @@ function App() {
                             path="/edit"
                             exact
                             element={
-                                <Page>
+                                <Page authenticate={true}>
                                     <Create edit={true} />
                                 </Page>
                             }

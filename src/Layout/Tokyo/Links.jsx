@@ -1,6 +1,7 @@
 import styles from "./tokyo.module.css";
 import { useContext } from "react";
 import { TokyoContext } from "../../Screens/Splash/Splash";
+import { httpParser } from "../../Utils/httpParser";
 const Links = () => {
     const tokyoData = useContext(TokyoContext);
     const sampleLinks = tokyoData?.link;
@@ -12,7 +13,7 @@ const Links = () => {
                         className={styles.links}
                         onClick={(e) => {
                             e.stopPropagation();
-                            window.open(item?.url, "_blank");
+                            window.open(httpParser(item?.url), "_blank");
                         }}
                     >
                         {item?.title}
