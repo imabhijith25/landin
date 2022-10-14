@@ -7,17 +7,20 @@ import { AllCardContext } from "./Dashboard";
 import { FullPageLoader, Splash } from "../Splash/Splash";
 import { getThemeBackground } from "../../Utils/themeSelector";
 import { useRef } from "react";
+import { deleteCard } from "../../API/deleteCard";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const DashView = () => {
     const allcards = useContext(AllCardContext);
     console.log(allcards);
-    if (allcards?.loading) {
+    if (allcards.cardState?.loading) {
         return (
             <>
                 <FullPageLoader />
             </>
         );
     }
-    if (allcards?.data?.length == 0) {
+    if (allcards.cardState?.data?.length == 0) {
         return (
             <>
                 <div>
@@ -27,10 +30,10 @@ const DashView = () => {
         );
     }
 
-    if (allcards?.data?.length > 0 && !allcards?.loading) {
+    if (allcards.cardState?.data?.length > 0 && !allcards?.cardState?.loading) {
         return (
             <>
-                <CardGrid data={allcards?.data} />
+                <CardGrid />
             </>
         );
     }
@@ -54,22 +57,41 @@ const NoView = () => {
     );
 };
 
-const CardGrid = ({ data }) => {
+const CardGrid = () => {
     const [modal, setModal] = useState({ show: false, data: null });
+    const allcards = useContext(AllCardContext);
+
     const handleClose = () => {
         setModal({ show: false, data: null });
     };
+    const handleRemove = (url) => {
+        allcards?.dispatch({ type: "DELETE", data: url });
+    };
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnHover
+                theme="light"
+            />
             {modal?.show && (
-                <DashModal data={modal} handleClose={handleClose} />
+                <DashModal
+                    data={modal}
+                    handleClose={handleClose}
+                    handleRemove={handleRemove}
+                />
             )}
             <div className={styles.pagesHeader}>
                 <h3>My Pages</h3>
             </div>
             <div className={styles.gridWrapper}>
                 <div className={styles.gridArea}>
-                    {data?.map((item) => (
+                    {allcards?.cardState?.data?.map((item) => (
                         <div className={styles.cardWrapper}>
                             <div
                                 className={styles.card}
@@ -99,10 +121,12 @@ const CardGrid = ({ data }) => {
     );
 };
 
-const DashModal = ({ data, handleClose }) => {
+const DashModal = ({ data, handleClose, handleRemove }) => {
     const ref = useRef();
     const navigate = useNavigate();
     const [load, setLoad] = useState(false);
+    const [deleteLoader, setDeleteLoader] = useState(false);
+
     const outsideClick = (e) => {
         if (ref?.current?.contains(e.target)) {
             console.log(true);
@@ -124,6 +148,29 @@ const DashModal = ({ data, handleClose }) => {
         setLoad(true);
     }, []);
 
+    const handleDelete = async (url) => {
+        setDeleteLoader(true);
+        const resp = await deleteCard(url);
+        if (resp?.data?.success) {
+            console.log("yes");
+            handleRemove(url);
+            toast.info(" Page Deleted!!", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+            handleClose();
+            setDeleteLoader(false);
+        } else {
+            setDeleteLoader(false);
+        }
+    };
+
     return (
         <>
             <div className={styles.modal}>
@@ -140,6 +187,7 @@ const DashModal = ({ data, handleClose }) => {
                         <input
                             type="button"
                             className="button"
+                            disabled={deleteLoader}
                             value="View Page"
                             onClick={() => {
                                 window.open(
@@ -151,6 +199,7 @@ const DashModal = ({ data, handleClose }) => {
                         <input
                             type="button"
                             className="button"
+                            disabled={deleteLoader}
                             value="Edit Page"
                             onClick={() => {
                                 navigate("/edit", {
@@ -161,7 +210,11 @@ const DashModal = ({ data, handleClose }) => {
                         <input
                             type="button"
                             className="button"
-                            value="Delete Page"
+                            disabled={deleteLoader}
+                            value={deleteLoader ? "Deleting..." : "Delete Page"}
+                            onClick={() => {
+                                handleDelete(data?.data?.url);
+                            }}
                         ></input>
                     </div>
                 </div>

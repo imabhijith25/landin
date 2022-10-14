@@ -5,7 +5,10 @@ import Splash, { FullPageLoader } from "../../Screens/Splash/Splash";
 import { TabContext } from "../TabWrapper/TabWrapper";
 import styles from "./publish.module.css";
 import { Link, useLocation } from "react-router-dom";
+import copy from "copy-to-clipboard";
 import cn from "classnames";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Publish = () => {
     const val = useContext(TabContext);
     const [loader, setLoader] = useState(true);
@@ -62,6 +65,16 @@ const Success = ({ data, edit }) => {
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnHover
+                theme="light"
+            />
             <div className={styles.wrapper}>
                 <div className={styles.success}>
                     <p className={styles.emoji}>🚀</p>
@@ -83,7 +96,24 @@ const Success = ({ data, edit }) => {
                         >
                             View my page
                         </button>
-                        <button className={cn("button")}>Copy URL</button>
+                        <button
+                            className={cn("button")}
+                            onClick={() => {
+                                copy(`${rootUrl}/u/${data?.data?.url}`);
+                                toast.info(" Copied to clipboard", {
+                                    position: "top-right",
+                                    autoClose: 3000,
+                                    hideProgressBar: false,
+                                    closeOnClick: true,
+                                    pauseOnHover: true,
+                                    draggable: true,
+                                    progress: undefined,
+                                    theme: "light",
+                                });
+                            }}
+                        >
+                            Copy URL
+                        </button>
                         <Link to="/dashboard">
                             {" "}
                             <button className={cn("button")}>
