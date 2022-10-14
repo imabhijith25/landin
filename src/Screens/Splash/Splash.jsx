@@ -66,16 +66,26 @@ export const Splash = ({ children }) => {
             setData(sampleData);
         }
     }, [status, url]);
-    return (
-        <>
-            <TokyoContext.Provider value={data}>
+    if (status?.loading) {
+        return (
+            <>
                 <div>
-                    {children}
-                    {/* <FullPageLoader /> */}
+                    <FullPageLoader />
                 </div>
-            </TokyoContext.Provider>
-        </>
-    );
+            </>
+        );
+    } else {
+        return (
+            <>
+                <TokyoContext.Provider value={data}>
+                    <div>
+                        {children}
+                        {/* <FullPageLoader /> */}
+                    </div>
+                </TokyoContext.Provider>
+            </>
+        );
+    }
 };
 export const FullPageLoader = ({ msg }) => {
     const random = Math.floor((Math.random() * 10) % 9);

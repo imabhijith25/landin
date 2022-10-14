@@ -57,16 +57,21 @@ function App() {
             <Route path="/amy" exact element={
               <Splash>
                 <Tokyo />
-              </Splash>
-
-
- 
+              </Splash> 
             }
             />
             
             <Route path="/dashboard" exact element={
               <Page>
                 <Dashboard />
+              </Page>
+
+            }
+            />
+
+<Route path="/edit" exact element={
+              <Page>
+                <Create/>
               </Page>
 
             }

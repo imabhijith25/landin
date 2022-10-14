@@ -1,5 +1,5 @@
 import styles from "./dashboard.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { themeList } from "../../Utils/completeThemes";
 import cn from "classnames";
 import { useContext, useState, useEffect } from "react";
@@ -101,6 +101,7 @@ const CardGrid = ({ data }) => {
 
 const DashModal = ({ data, handleClose }) => {
     const ref = useRef();
+    const navigate = useNavigate();
     const [load, setLoad] = useState(false);
     const outsideClick = (e) => {
         if (ref?.current?.contains(e.target)) {
@@ -151,6 +152,11 @@ const DashModal = ({ data, handleClose }) => {
                             type="button"
                             className="button"
                             value="Edit Page"
+                            onClick={() => {
+                                navigate("/edit", {
+                                    state: { edit: true, data: data?.data },
+                                });
+                            }}
                         ></input>
                         <input
                             type="button"
