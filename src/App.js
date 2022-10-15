@@ -11,6 +11,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from "./Redux/store";
 import { Provider } from "react-redux";
+import Homepage from "./Screens/Homepage/Homepage";
 let persistor = persistStore(store);
 function App() {
     return (
@@ -18,6 +19,15 @@ function App() {
             <Provider store={store}>
                 <PersistGate persistor={persistor}>
                     <Routes>
+                        <Route
+                            path="/"
+                            exact
+                            element={
+                                <Page>
+                                    <Homepage />
+                                </Page>
+                            }
+                        />
                         <Route
                             path="/login"
                             exact

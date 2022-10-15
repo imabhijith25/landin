@@ -1,0 +1,147 @@
+.bannerContainer{
+    background-color: #54a1b8e3;
+    height: 300px;
+    margin-top: 0px;
+}
+.demoContainer{
+    background-color:#ebcd60e5;
+
+    margin-top: 0px;
+}
+
+.featureContainer{
+    background-color:white;
+
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+.intro{
+   padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.intro h2{
+    font-weight: 900;
+}
+.intro p {
+    margin-top: 10px;
+    font-weight: 700;
+}
+.intro a{
+    margin-top: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(175, 47, 47);
+}
+.introInput{
+    margin-top: 40px;
+    max-width: 304px;
+    width: 100%;
+}
+.introInput input[type="text"]{
+    padding: 10px 7px;
+    outline: none;
+    width: 100%;
+
+}
+.introInput button{
+    padding: 10px 7px;
+    margin-top: 10px;
+    width: 100%;
+}
+.video{
+    margin-top: 30px;
+    position: relative;
+    height: 200px;
+    width: 640px;
+    overflow: hidden;
+    height: 350px;
+}
+.player{
+   position: absolute;
+   top: 0px;
+   left: 0px;
+}
+.demoButton{
+    padding: 10px 7px;
+    width: 100%;
+ 
+}
+.seeMore{
+    
+    margin: 20px 0px;
+    max-width: 304px;
+    width: 100%;
+}
+.seeMore h3{
+    margin-bottom: 10px;
+    font-weight: 900 !important;
+}
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.card{
+    width: 33.33%;
+    padding: 10px;
+}
+.cardContainer{
+    max-width: 300px;
+
+}
+.cardContainer h3{
+    font-weight: 800 !important;
+}
+.links{
+    max-width: 204px;
+    width: 100%;
+    display: flex;
+    column-gap: 10px;
+    justify-content: center
+}
+.about{
+    margin-bottom: 20px;
+}
+@media all and (max-width:1000px) {
+    .card {
+        width: 50%;
+    }
+}
+@media all and (max-width:600px) {
+
+    .intro{
+        padding-top: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+     }
+     .intro h2{
+        font-size: 25px;
+     }
+     .video{
+        margin-top: 30px;
+        position: relative;
+        height: 200px;
+        max-width: 660px;
+        width: 100%;
+        overflow: hidden;
+        height: 220px
+    }
+    .card{
+
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 40px;
+    }
+    .grid{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
