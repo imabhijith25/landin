@@ -1,6 +1,6 @@
 .bannerContainer{
     background-color: #54a1b8e3;
-    height: 300px;
+    height: 320px;
     margin-top: 0px;
 }
 .demoContainer{
@@ -8,7 +8,11 @@
 
     margin-top: 0px;
 }
-
+.error{
+    color:rgb(175, 31, 31);
+    font-size: 12px;
+    
+}
 .featureContainer{
     background-color:white;
 
@@ -91,6 +95,8 @@
 }
 .cardContainer{
     max-width: 300px;
+    padding: 10px;
+
 
 }
 .cardContainer h3{

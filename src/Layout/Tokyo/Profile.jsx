@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { TokyoContext } from "../../Screens/Splash/Splash";
 const Profile = () => {
     const tokyoData = useContext(TokyoContext);
-    console.log(tokyoData);
     return (
         <>
             <div className={styles.profileContainer}>

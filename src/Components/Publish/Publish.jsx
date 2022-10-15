@@ -16,7 +16,7 @@ const Publish = () => {
     const [failure, setFailure] = useState(false);
     const [data, setData] = useState({});
     const editvalues = useLocation();
-    console.log(editvalues);
+
     const PublishCard = async () => {
         const re = await uploadCard(
             val?.selectedTab?.cardDetails,

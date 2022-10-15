@@ -17,7 +17,6 @@ const Register = () => {
     const [loader, setLoader] = useState(false);
     const [checkUrl, setCheckUrl] = useState("");
     const [error, setError] = useState({});
-    console.log(params.get("q"));
     useEffect(() => {
         if (params.get("q")) {
             setCheckUrl(params.get("q"));
@@ -62,23 +61,19 @@ const Register = () => {
         <>
             <div className={cn("container", styles.loginContainer)}>
                 <div className={styles.formWrapper}>
-                    {/* {checkUrl &&
+                    {checkUrl && (
                         <>
-
                             <div className={cn("message", styles.checkUrl)}>
                                 <p>{checkUrl} is available</p>
                             </div>
-
-
                         </>
-
-                    } */}
+                    )}
                     <div className={styles.message}>
                         <p>Create an account</p>
                     </div>
                     <div className={styles.formControl}>
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             placeholder="email"
                             onChange={handleChange}
@@ -142,6 +137,9 @@ const Register = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className={styles.about}>
+                Made with ❤️ by <a href="/u/abhi">Abhijith</a>
             </div>
         </>
     );

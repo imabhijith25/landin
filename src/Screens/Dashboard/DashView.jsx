@@ -13,7 +13,6 @@ import "react-toastify/dist/ReactToastify.css";
 import copy from "copy-to-clipboard";
 const DashView = () => {
     const allcards = useContext(AllCardContext);
-    console.log(allcards);
     if (allcards.cardState?.loading) {
         return (
             <>
@@ -130,7 +129,6 @@ const DashModal = ({ data, handleClose, handleRemove }) => {
 
     const outsideClick = (e) => {
         if (ref?.current?.contains(e.target)) {
-            console.log(true);
         } else {
             handleClose();
         }
@@ -153,7 +151,6 @@ const DashModal = ({ data, handleClose, handleRemove }) => {
         setDeleteLoader(true);
         const resp = await deleteCard(url);
         if (resp?.data?.success) {
-            console.log("yes");
             handleRemove(url);
             toast.info(" Page Deleted!!", {
                 position: "top-right",

@@ -7,5 +7,5 @@ export const socialList = [
     "Youtube",
     "Twitch",
     "LinkedIn",
-    "Github"
-]
+    "Github",
+];

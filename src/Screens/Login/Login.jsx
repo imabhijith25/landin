@@ -20,7 +20,7 @@ const Login = () => {
     const [error, setError] = useState({});
     const [params] = useSearchParams();
     const [checkUrl, setCheckUrl] = useState("");
-    console.log(params.get("q"));
+
     useEffect(() => {
         if (params.get("q")) {
             setCheckUrl(params.get("q"));
@@ -71,7 +71,7 @@ const Login = () => {
                     )}
                     <div className={styles.formControl}>
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             placeholder="email"
                             onChange={handleChange}
@@ -124,6 +124,9 @@ const Login = () => {
                         </p>
                     </div>
                 </div>
+            </div>
+            <div className={styles.about}>
+                Made with ❤️ by <a href="/u/abhi">Abhijith</a>
             </div>
         </>
     );

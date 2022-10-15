@@ -49,3 +49,8 @@
 .error p {
     color: rgb(217, 49, 49)
 }
+.about{
+    text-align: center;
+    font-weight: 700;
+    font-size: 12px;
+}

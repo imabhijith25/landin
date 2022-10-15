@@ -1,45 +1,42 @@
 export const RegisterValidation = (email, name, password) => {
-    let error = {}
+    let error = {};
     if (!email) {
-        error.email = "Required field!"
+        error.email = "Required field!";
     }
     if (!name) {
-        error.name = "Required field!"
+        error.name = "Required field!";
     }
 
     if (!password) {
-        error.password = "Required field!"
+        error.password = "Required field!";
     }
-    if (!email.match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )) {
-        error.email = "Invalid Email Format"
+    if (
+        !email.match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+    ) {
+        error.email = "Invalid Email Format";
     }
 
-    return error
-
-
-
-}
+    return error;
+};
 
 export const LoginValidation = (email, password) => {
-    let error = {}
+    let error = {};
     if (!email) {
-        console.log("enter")
-        error.email = "Required field!"
+        error.email = "Required field!";
     }
 
     if (!password) {
-        error.password = "Required field!"
+        error.password = "Required field!";
     }
-    if (!email.match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )) {
-        error.email = "Invalid Email Format"
+    if (
+        !email.match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        )
+    ) {
+        error.email = "Invalid Email Format";
     }
 
-    return error
-
-
-
-}
+    return error;
+};

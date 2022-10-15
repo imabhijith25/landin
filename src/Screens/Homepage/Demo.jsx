@@ -11,7 +11,7 @@ const Demo = () => {
                     <div className={styles.video}>
                         <ReactPlayer
                             url="/images/demo.mp4"
-                            playing
+                            playing={false}
                             controls
                             width={"100%"}
                             height={"100%"}

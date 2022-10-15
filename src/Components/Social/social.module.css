@@ -132,9 +132,9 @@
 }
 
 .incompleteField {
-    border: 2px solid;
-    margin: 20px;
-    padding: 5px;
+
+    margin: 22px;
+    padding: 7px 5px;
     border-radius: 6px;
     background-color: rgba(235, 204, 96, 0.88);
     cursor: pointer;

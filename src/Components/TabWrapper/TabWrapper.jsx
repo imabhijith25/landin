@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
                 ...newState,
                 [action.data.name]: action.data.value,
             };
-            console.log({ ...state, cardDetails: newCardDetails });
+
             return { ...state, cardDetails: newCardDetails };
 
         case "EDIT INITIAL STATE":
@@ -51,7 +51,6 @@ const reducer = (state = initialState, action) => {
 const TabWrapper = ({ children }) => {
     const [selectedTab, dispatch] = useReducer(reducer, initialState);
     const editvalues = useLocation();
-    console.log(editvalues);
     useEffect(() => {
         if (editvalues?.state?.edit) {
             const existing = editvalues?.state?.data;

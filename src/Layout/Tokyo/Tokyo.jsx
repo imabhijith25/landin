@@ -14,7 +14,6 @@ import { TokyoContext } from "../../Screens/Splash/Splash";
 import { httpParser } from "../../Utils/httpParser";
 const Tokyo = ({ sample }) => {
     const tokyoData = useContext(TokyoContext);
-    console.log(tokyoData);
     const tabs = [
         {
             name: "me",

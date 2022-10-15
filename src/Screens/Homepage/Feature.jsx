@@ -5,15 +5,15 @@ const Feature = () => {
     const divs = [
         {
             head: "Customize with themes",
-            body: "With many themes, you can customize the way your site looks like",
+            body: "With many themes, you can customize the site to your liking.",
         },
         {
             head: "Show your latest achievement",
-            body: "You can showcase your latest blog post or a your latest video by linking them on your bio",
+            body: "You can showcase your latest blog post or a your latest video by linking them on your bio.",
         },
         {
             head: "All your social media",
-            body: "You can link all your social media urls so that all your links can be at one place",
+            body: "You can link all your social media urls so that all your links can be at one place.",
         },
     ];
     return (

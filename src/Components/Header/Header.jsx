@@ -7,7 +7,6 @@ const Header = () => {
 
     const getHeaderValue = () => {
         const url = window.location.pathname;
-        console.log(url);
         if (url in dynamicHeaderKey) {
             return dynamicHeaderKey[url];
         } else {

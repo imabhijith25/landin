@@ -54,7 +54,7 @@ export const Splash = ({ children }) => {
     const hideInfoShow = () => {
         setShowInfo(false);
     };
-    console.log(status);
+
     useEffect(() => {
         if (url && status?.loading == false) {
             const parsedData = {
@@ -64,7 +64,7 @@ export const Splash = ({ children }) => {
                 themeName: status?.data?.themeName,
                 profilePicUrl: status?.data?.profilePicUrl,
             };
-            console.log(parsedData);
+
             setData(parsedData);
         } else if (theme) {
             sampleData.themeName = theme;
