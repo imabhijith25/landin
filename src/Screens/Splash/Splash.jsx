@@ -17,7 +17,7 @@ export const Splash = ({ children }) => {
         aboutUs: {
             name: "Amy",
             profilePicUrl: "/images/Sample/elane.png",
-            bio: "Hi I am an optometrist and an influencer",
+            bio: "Hi I am an optometrist and an influencer. I made this page using landin",
         },
         profilePicUrl: "/images/Sample/elane.png",
         link: [
@@ -26,7 +26,7 @@ export const Splash = ({ children }) => {
                 url: "https://www.instagram.com/p/CetLQB_JasR/",
             },
             {
-                title: "Uncle Pai!!",
+                title: "A video I wrote on Uncle Pai!!",
                 url: "https://www.instagram.com/p/CeGoEt-J0Ze/",
             },
             {

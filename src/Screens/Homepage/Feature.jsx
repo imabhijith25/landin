@@ -9,11 +9,11 @@ const Feature = () => {
         },
         {
             head: "Show your latest achievement",
-            body: "You can showcase your latest blog post or a your latest video by linking them on your bio.",
+            body: "You can showcase your latest blog post or  your latest video by linking them on your bio.",
         },
         {
             head: "All your social media",
-            body: "You can link all your social media urls so that all your links can be at one place.",
+            body: "You can link all your social media urls so that all your links will be at one place.",
         },
     ];
     return (

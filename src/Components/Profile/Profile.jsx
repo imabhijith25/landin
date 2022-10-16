@@ -105,6 +105,7 @@ const Profile = () => {
                         type="file"
                         style={{ display: "none" }}
                         id="fileuploadbutton"
+                        accept="image/*"
                         onChange={fileChange}
                     />
                     {error?.state && (

@@ -7,7 +7,7 @@ const Demo = () => {
             <div className={styles.demoContainer} id="demo">
                 <div className={cn("container", styles.intro)}>
                     <h2>See the Demo</h2>
-                    <p>Becuase a video is worth a thousand words</p>
+                    <p>Because a video is worth a thousand words</p>
                     <div className={styles.video}>
                         <ReactPlayer
                             url="/images/demo.mp4"

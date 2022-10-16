@@ -3,9 +3,11 @@ import cn from "classnames";
 import { useState } from "react";
 import { checkIfCardisAvailable } from "../../API/uploadCard";
 import { useNavigate } from "react-router";
+import PuffLoader from "react-spinners/PuffLoader";
 const Banner = () => {
     const [url, setUrl] = useState("");
     const [error, setError] = useState(null);
+    const [loader, setLoader] = useState(false);
     const navigate = useNavigate();
     const characterValidator = (e) => {
         let char = e.target.value;
@@ -15,11 +17,14 @@ const Banner = () => {
         }
     };
     const handleClick = async (e) => {
+        setLoader(true);
         const result = await checkIfCardisAvailable(url);
         if (result?.data?.success) {
+            setLoader(false);
             navigate(`/register?q=${url}`);
         } else {
             setError(result?.response?.data?.message);
+            setLoader(false);
         }
     };
     return (
@@ -44,7 +49,15 @@ const Banner = () => {
                         ></input>
                         <p>getlandin.com/u/{url}</p>
                         <button className="button" onClick={handleClick}>
-                            Create your page
+                            {loader ? (
+                                <PuffLoader
+                                    size={13}
+                                    color="white"
+                                    loading="true"
+                                />
+                            ) : (
+                                "Create Your Page"
+                            )}
                         </button>
                         {error && <p className={styles.error}>{error}</p>}
                     </div>

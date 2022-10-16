@@ -107,10 +107,14 @@ const Tokyo = ({ sample }) => {
                                 src={`/images/social/${item?.title?.toLowerCase()}.svg`}
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    window.open(
-                                        httpParser(item?.url),
-                                        "_blank"
-                                    );
+                                    if (item?.title?.toLowerCase() == "mail") {
+                                        window.open("mailto:" + item?.url);
+                                    } else {
+                                        window.open(
+                                            httpParser(item?.url),
+                                            "_blank"
+                                        );
+                                    }
                                 }}
                             />
                         ))}
