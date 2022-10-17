@@ -82,7 +82,7 @@ const Success = ({ data, edit }) => {
                     <div className={styles.msg}>
                         {edit && <p>Page Edited successfully</p>}
                         {!edit && <p>Page created successfully</p>}
-                        <p>getlandin.com/u/sdnuds</p>
+                        <p>getlandin.com/u/{data?.data?.url}</p>
                     </div>
                     <div className={styles.action}>
                         <button
