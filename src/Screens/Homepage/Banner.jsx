@@ -4,6 +4,7 @@ import { useState } from "react";
 import { checkIfCardisAvailable } from "../../API/uploadCard";
 import { useNavigate } from "react-router";
 import PuffLoader from "react-spinners/PuffLoader";
+import { Link } from "react-router-dom";
 const Banner = () => {
     const [url, setUrl] = useState("");
     const [error, setError] = useState(null);
@@ -36,6 +37,10 @@ const Banner = () => {
                         Make your online presence more visible with customizable
                         landing pages
                     </p>
+                    <div className={styles.links}>
+                        <Link to="/login">Login</Link>
+                        <Link to="/register">Register</Link>
+                    </div>
                     <div className={styles.introInput}>
                         <input
                             type={"text"}

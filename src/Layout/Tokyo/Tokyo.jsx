@@ -120,6 +120,15 @@ const Tokyo = ({ sample }) => {
                         ))}
                     </div>
                 </div>
+
+                <div className={styles.powered}>
+                    <p>
+                        Powered by{" "}
+                        <a href="https://getlandin.com" target="_blank">
+                            Landin
+                        </a>
+                    </p>
+                </div>
             </div>
         </>
     );

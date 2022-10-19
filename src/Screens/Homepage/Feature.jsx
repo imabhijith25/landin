@@ -32,10 +32,6 @@ const Feature = () => {
                             </div>
                         ))}
                     </div>
-                    <div className={styles.links}>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </div>
 
                     {/* <div className={styles.seeMore}>
                         <h3>Still not satisfied?</h3>
