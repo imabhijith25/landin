@@ -40,3 +40,18 @@ export const LoginValidation = (email, password) => {
 
     return error;
 };
+
+export const themeValidator = (color_one, color_two, bgImage) => {
+    let error = {};
+    if (!color_one) {
+        error.color_one = "Please provide color #1";
+    }
+    if (!color_two) {
+        error.color_two = "Please provide color #2";
+    }
+    if (!bgImage) {
+        error.bgImage = "Please provide background image";
+    }
+
+    return error;
+};

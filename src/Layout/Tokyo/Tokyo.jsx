@@ -28,8 +28,16 @@ const Tokyo = ({ sample }) => {
     const [currentTab, setCurrentTab] = useState(0);
     let tab = currentTab;
     const assignTheme = () => {
+        let theme;
         const sampleTheme = tokyoData?.themeName;
-        const theme = getThemeVariables(sampleTheme);
+        if (sampleTheme == "custom") {
+            theme = {
+                "--profileBackground": tokyoData?.custom?.color_one,
+                "--overallBackground": tokyoData?.custom?.color_two,
+            };
+        } else {
+            theme = getThemeVariables(sampleTheme);
+        }
         const ele = document.getElementById("layoutContainer");
         const keyArray = Object.keys(theme);
         keyArray.forEach((item) => {
@@ -87,12 +95,22 @@ const Tokyo = ({ sample }) => {
                     {tokyoData && (
                         <div
                             className={styles.profile}
-                            style={{
-                                backgroundImage: `url(${
-                                    getThemeBackground(tokyoData?.themeName)
-                                        .location
-                                })`,
-                            }}
+                            style={
+                                tokyoData?.themeName == "custom"
+                                    ? {
+                                          backgroundImage: `url(${tokyoData?.custom?.bgImage})`,
+                                          backgroundSize: "cover",
+                                          backgroundPosition: "center",
+                                          backgroundRepeat: "no-repeat",
+                                      }
+                                    : {
+                                          backgroundImage: `url(${
+                                              getThemeBackground(
+                                                  tokyoData?.themeName
+                                              ).location
+                                          })`,
+                                      }
+                            }
                         >
                             {currentTab == 0 && <Profile />}
                             {currentTab == 1 && <About />}

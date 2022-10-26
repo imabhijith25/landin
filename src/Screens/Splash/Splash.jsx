@@ -2,16 +2,20 @@ import { Children } from "react";
 import styles from "./splash.module.css";
 import PuffLoader from "react-spinners/PuffLoader";
 import { facts } from "../../Utils/facts";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { useFetch } from "../../Hooks/useFetch";
 import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
+import { useSearchParams } from "react-router-dom";
 export const TokyoContext = createContext();
 export const Splash = ({ children }) => {
     //initialise sample data here
+
     const { url, theme } = useParams();
     const [data, setData] = useState(null);
+    const [params] = useSearchParams();
+    console.log(params?.get("c"));
     const [showInfo, setShowInfo] = useState(false);
     let sampleData = {
         aboutUs: {
@@ -67,8 +71,20 @@ export const Splash = ({ children }) => {
 
             setData(parsedData);
         } else if (theme) {
-            sampleData.themeName = theme;
-            setData(sampleData);
+            if (theme == "custom") {
+                console.log("custom");
+                sampleData.themeName = "custom";
+                console.log(params);
+                sampleData.custom = {
+                    color_one: params?.get("c1"),
+                    color_two: params?.get("c2"),
+                    bgImage: params?.get("bg"),
+                };
+                setData(sampleData);
+            } else {
+                sampleData.themeName = theme;
+                setData(sampleData);
+            }
         }
     }, [status, url]);
 
