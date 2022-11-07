@@ -45,7 +45,7 @@ const Banner = () => {
                         landing pages
                     </p>
                     <div className={styles.links}>
-                        <span>
+                        <span className={styles.linkSpan}>
                             {" "}
                             <Link to="/login">Login</Link> /{" "}
                             <Link to="/register">Register</Link>
@@ -66,11 +66,7 @@ const Banner = () => {
                         <p>getlandin.com/u/{url}</p>
                         <button className="button" onClick={handleClick}>
                             {loader ? (
-                                <PuffLoader
-                                    size={13}
-                                    color="white"
-                                    loading="true"
-                                />
+                                <PuffLoader size={12} color="white" />
                             ) : (
                                 "Create Your Page"
                             )}
