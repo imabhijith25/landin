@@ -80,6 +80,7 @@ const Profile = () => {
     }, []);
     return (
         <>
+            {console.log(val)}
             <div className={styles.profileContainer}>
                 <p className={styles.head}>Write something about yourself!!</p>
                 <div className={styles.profileArea}>

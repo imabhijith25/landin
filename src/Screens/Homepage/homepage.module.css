@@ -1,11 +1,10 @@
 .bannerContainer{
-    background-color: #54a1b8e3;
+    position: relative;
     height: 350px;
     margin-top: 0px;
 }
-.demoContainer{
-    background-color:#ebcd60e5;
 
+.demoContainer{
     margin-top: 0px;
 }
 .error{
@@ -32,12 +31,17 @@
 .intro p {
     margin-top: 10px;
     font-weight: 700;
+
+}
+.intro span{
+    margin-top: 20px;
 }
 .intro a{
-    margin-top: 20px;
-    font-weight: 700;
-    text-decoration: none;
-    color: rgb(175, 47, 47);
+
+    font-weight: 500;
+    font-size: 14px;;
+    text-decoration: underline;
+    color: rgb(29, 29, 32);
 }
 .introInput{
     margin-top: 40px;
@@ -73,6 +77,9 @@
     width: 100%;
  
 }
+.demoButton a{
+    color: white;
+}
 .seeMore{
     
     margin: 20px 0px;
@@ -92,22 +99,32 @@
 .card{
     width: 33.33%;
     padding: 10px;
+   
+    
 }
 .cardContainer{
     max-width: 300px;
-    padding: 10px;
+    padding: 50px;
+    border: 2px solid #e7edfa;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #e7edfa;
+    
 
 
 }
 .cardContainer h3{
     font-weight: 800 !important;
 }
+.cardContainer h2{
+    margin-bottom: 10px;
+}
 .links{
     max-width: 204px;
     width: 100%;
     display: flex;
     column-gap: 10px;
-    justify-content: center
+    justify-content: center;
 }
 .about{
     margin-bottom: 20px;

@@ -2,12 +2,15 @@ import styles from "./theme.module.css";
 import { CirclePicker } from "react-color";
 import { storage } from "../../Firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { themeValidator } from "../../Utils/formValidation";
-const CustomThemeModal = ({ handleClose }) => {
+import { TabContext } from "../TabWrapper/TabWrapper";
+import { useEffect } from "react";
+const CustomThemeModal = ({ handleClose, customSelected }) => {
+    const val = useContext(TabContext);
     const bgImagePlaceholder =
         "https://images.unsplash.com/photo-1666221340457-1af7d0be8ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1129&q=80";
     const [custom, setCustom] = useState({
@@ -15,6 +18,14 @@ const CustomThemeModal = ({ handleClose }) => {
         color_two: "",
         bgImage: "",
     });
+
+    //set initial custom values if custom values are already present
+    useEffect(() => {
+        if (customSelected) {
+            console.log(val?.selectedTab?.cardDetails);
+            setCustom(val?.selectedTab?.cardDetails?.custom);
+        }
+    }, [customSelected]);
     const [loader, setLoader] = useState(false);
     const [error, setError] = useState(null);
     const handleFileClick = () => {
@@ -78,7 +89,16 @@ const CustomThemeModal = ({ handleClose }) => {
             custom?.bgImage
         );
         if (Object?.keys(err)?.length == 0) {
-            console.log("fine");
+            console.log(val);
+            val.dispatch({
+                type: "UPDATE STATE",
+                data: { name: "themeName", value: "custom" },
+            });
+            val.dispatch({
+                type: "ADD CUSTOM",
+                data: { name: "custom", value: custom },
+            });
+            handleClose(false);
         } else {
             setError(err);
         }

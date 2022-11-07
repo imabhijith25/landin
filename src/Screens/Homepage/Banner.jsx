@@ -30,7 +30,14 @@ const Banner = () => {
     };
     return (
         <>
-            <div className={styles.bannerContainer}>
+            <div
+                className={styles.bannerContainer}
+                style={{
+                    backgroundImage: `url(${"/images/bgWave.svg"})`,
+                    backgroundPosition: "100% 100%",
+                    backgroundSize: "cover",
+                }}
+            >
                 <div className={cn("container", styles.intro)}>
                     <h2>Create stunning bio pages</h2>
                     <p>
@@ -38,9 +45,13 @@ const Banner = () => {
                         landing pages
                     </p>
                     <div className={styles.links}>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
+                        <span>
+                            {" "}
+                            <Link to="/login">Login</Link> /{" "}
+                            <Link to="/register">Register</Link>
+                        </span>
                     </div>
+
                     <div className={styles.introInput}>
                         <input
                             type={"text"}

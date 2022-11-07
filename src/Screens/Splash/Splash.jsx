@@ -61,14 +61,27 @@ export const Splash = ({ children }) => {
 
     useEffect(() => {
         if (url && status?.loading == false) {
-            const parsedData = {
-                aboutUs: JSON.parse(status?.data?.aboutUs),
-                link: JSON.parse(JSON.parse(status?.data?.link)),
-                post: JSON.parse(JSON.parse(status?.data?.post)),
-                themeName: status?.data?.themeName,
-                profilePicUrl: status?.data?.profilePicUrl,
-            };
+            let parsedData;
+            if (status?.data?.themeName == "custom") {
+                parsedData = {
+                    aboutUs: JSON.parse(status?.data?.aboutUs),
+                    link: JSON.parse(JSON.parse(status?.data?.link)),
+                    post: JSON.parse(JSON.parse(status?.data?.post)),
+                    themeName: status?.data?.themeName,
+                    profilePicUrl: status?.data?.profilePicUrl,
+                    custom: JSON.parse(status?.data?.custom),
+                };
+            } else {
+                parsedData = {
+                    aboutUs: JSON.parse(status?.data?.aboutUs),
+                    link: JSON.parse(JSON.parse(status?.data?.link)),
+                    post: JSON.parse(JSON.parse(status?.data?.post)),
+                    themeName: status?.data?.themeName,
+                    profilePicUrl: status?.data?.profilePicUrl,
+                };
+            }
 
+            console.log(parsedData);
             setData(parsedData);
         } else if (theme) {
             if (theme == "custom") {

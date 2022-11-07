@@ -43,6 +43,12 @@ const reducer = (state = initialState, action) => {
 
         case "EDIT INITIAL STATE":
             return { ...state, cardDetails: action?.data };
+
+        case "ADD CUSTOM":
+            const newStateCustom = state.cardDetails;
+            console.log(action.data?.value);
+            newStateCustom.custom = action?.data?.value;
+            return { ...state, cardDetails: newStateCustom };
         default:
             return state;
     }
@@ -61,6 +67,10 @@ const TabWrapper = ({ children }) => {
                 aboutUs: JSON.parse(existing?.aboutUs),
                 link: JSON.parse(JSON.parse(existing?.link)),
                 post: JSON.parse(JSON.parse(existing?.post)),
+                custom:
+                    existing?.themeName == "custom"
+                        ? JSON.parse(existing?.custom)
+                        : null,
             };
             dispatch({ type: "EDIT INITIAL STATE", data: newDetails });
         }

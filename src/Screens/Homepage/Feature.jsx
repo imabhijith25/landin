@@ -4,14 +4,17 @@ import { Link } from "react-router-dom";
 const Feature = () => {
     const divs = [
         {
+            emoji: "🌈",
             head: "Customize with themes",
             body: "With many themes, you can customize the site to your liking.",
         },
         {
+            emoji: "🏆",
             head: "Show your latest achievement",
             body: "You can showcase your latest blog post or  your latest video by linking them on your bio.",
         },
         {
+            emoji: "🤡",
             head: "All your social media",
             body: "You can link all your social media urls so that all your links will be at one place.",
         },
@@ -21,11 +24,11 @@ const Feature = () => {
             <div className={styles.featureContainer}>
                 <div className={cn("container", styles.intro)}>
                     <h2>All your links at one place</h2>
-                    <a href="#demo">See Demo</a>
                     <div className={styles.grid}>
                         {divs.map((item) => (
                             <div className={styles.card}>
                                 <div className={styles.cardContainer}>
+                                    <h2>{item?.emoji}</h2>
                                     <h3>{item?.head}</h3>
                                     <p>{item?.body}</p>
                                 </div>

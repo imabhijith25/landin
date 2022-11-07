@@ -104,8 +104,11 @@ const CardGrid = () => {
                                 </button>
                                 <img
                                     src={
-                                        getThemeBackground(item?.themeName)
-                                            ?.location
+                                        item?.themeName != "custom"
+                                            ? getThemeBackground(
+                                                  item?.themeName
+                                              )?.location
+                                            : JSON.parse(item?.custom)?.bgImage
                                     }
                                     alt="my_items"
                                 />

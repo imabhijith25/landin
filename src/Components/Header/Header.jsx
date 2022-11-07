@@ -21,7 +21,7 @@ const Header = () => {
                 className={styles.header}
                 style={
                     window?.location?.pathname == "/"
-                        ? { backgroundColor: "#54a1b8e3" }
+                        ? { backgroundColor: "#eeeeeec8" }
                         : { backgroundColor: "white" }
                 }
             >

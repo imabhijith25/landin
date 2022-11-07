@@ -4,7 +4,15 @@ import ReactPlayer from "react-player";
 const Demo = () => {
     return (
         <>
-            <div className={styles.demoContainer} id="demo">
+            <div
+                className={styles.demoContainer}
+                id="demo"
+                style={{
+                    backgroundImage: `url(${"/images/demoBg.svg"})`,
+                    backgroundPosition: "100% 100%",
+                    backgroundSize: "cover",
+                }}
+            >
                 <div className={cn("container", styles.intro)}>
                     <h2>See the Demo</h2>
                     <p>Because a video is worth a thousand words</p>
