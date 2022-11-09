@@ -1,0 +1,31 @@
+h4{
+    margin: 0;
+}
+.modal{
+    position: relative;
+}
+.closeButton{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+.widgetWrap{
+    display: flex;
+    align-items: center;
+   padding: 10px 5px 10px 0px;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+.widgetWrap:hover{
+     background-color: #e7edfa;
+}
+.widgetWrap h5{
+    margin: 0;
+    font-size: 14px;
+}
+.details{
+    margin-left: 10px;
+}

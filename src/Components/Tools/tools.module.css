@@ -3,9 +3,22 @@
     width: 100%;
     height:50px;
     border-bottom: 1px solid rgb(129, 129, 129);
-    
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
 }
-.menuIcon{
-    padding: 12px;
+.buttonArea{
+    margin-right: 10px;
+    width: 100%;
+    text-align: right;
+}
+.buttonArea button{
+    padding: 5px 15px;
 }
 
+
+@media all and (max-width:600px) {
+
+  
+
+}

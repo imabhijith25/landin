@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import useWidth from "../../Hooks/useWidth";
 import { EditorContext } from "../../Screens/Editor/Editor";
+import Modal from "../Modal/Modal";
 import styles from "./tools.module.css";
 const Tools = () => {
     const windowWidth = useWidth();
@@ -23,6 +24,20 @@ const Tools = () => {
                     )}
                 </div>
             )}
+            <div className={styles.logoArea}></div>
+            <div className={styles.buttonArea}>
+                <button
+                    className="toolButton"
+                    onClick={() => {
+                        editorContextvalues?.dispatch({
+                            type: "TOGGLE_MODAL_WIDGET",
+                        });
+                    }}
+                >
+                    {" "}
+                    + Add Widgets
+                </button>
+            </div>
         </div>
     );
 };

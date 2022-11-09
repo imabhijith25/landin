@@ -91,6 +91,17 @@ textarea {
   border: none;
 }
 
+.toolButton{
+  background-color: #137497;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400 !important;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: none;
+}
+
 .message p {
   font-weight: 800 !important;
 }
