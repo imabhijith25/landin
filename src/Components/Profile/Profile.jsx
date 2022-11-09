@@ -95,6 +95,15 @@ const Profile = () => {
                         <p>
                             {editorContextvalues?.state?.preview?.profile?.bio}
                         </p>
+
+                        <div className={styles.socialHolder}>
+                            {Object.keys(
+                                editorContextvalues?.state?.preview?.profile
+                                    ?.social
+                            ).map((item, index) => (
+                                <img src={`/images/social/${item}.svg`}></img>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

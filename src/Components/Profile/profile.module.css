@@ -4,7 +4,7 @@
     padding: 40px;
     max-width: 500px;
     width: 100%;
-
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .flexer{
     display: flex;
@@ -38,6 +38,14 @@
     overflow: hidden;
     border-radius: 50%;
 }
+.socialHolder{
+    margin-top: 10px;
+}
+.socialHolder img{
+    margin-right:8px;
+    cursor: pointer;
+
+}
 
 @media all and (max-width: 800px) {
     .imageCropper{
@@ -52,5 +60,10 @@
     }
     .details p{
         font-size: 12px;
+    }
+    .socialHolder img{
+    height: 18px;
+    width: 18px;
+        
     }
 }
