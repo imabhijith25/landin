@@ -4,11 +4,11 @@ import { storage } from "../../Firebase";
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { useState } from "react";
 import { useContext } from "react";
-import { TabContext } from "../TabWrapper/TabWrapper";
 import { useEffect } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
+import { EditorContext } from "../../Screens/Editor/Editor";
 const Profile = () => {
-    const val = useContext(TabContext);
+    const editorContextvalues = useContext(EditorContext);
     const [loader, setLoader] = useState(false);
     const [error, setError] = useState({
         state: false,
@@ -73,91 +73,29 @@ const Profile = () => {
         );
     };
 
-    useEffect(() => {
-        if (val?.selectedTab?.cardDetails?.aboutUs) {
-            setProfileValues(val?.selectedTab?.cardDetails?.aboutUs);
-        }
-    }, []);
     return (
         <>
-            {console.log(val)}
             <div className={styles.profileContainer}>
-                <p className={styles.head}>Write something about yourself!!</p>
-                <div className={styles.profileArea}>
-                    <div className={styles.puff}>
-                        {loader && (
-                            <PuffLoader
-                                color="white"
-                                loading={true}
-                                size={64}
-                            />
-                        )}
+                <div className={styles.flexer}>
+                    <div className={styles.imageCropper}>
+                        <img
+                            src={
+                                editorContextvalues?.state?.preview?.profile
+                                    ?.profilePic
+                            }
+                            alt="profile"
+                            className={styles.img}
+                        ></img>
                     </div>
 
-                    <img
-                        src={
-                            profileValues?.profilePicUrl
-                                ? profileValues?.profilePicUrl
-                                : profileImageUrl
-                        }
-                        className={styles.profileImage}
-                    />
-                    <input
-                        type="file"
-                        style={{ display: "none" }}
-                        id="fileuploadbutton"
-                        accept="image/*"
-                        onChange={fileChange}
-                    />
-                    {error?.state && (
-                        <div className={styles.error}>
-                            <p>{error.msg}</p>
-                        </div>
-                    )}
-                    <button onClick={fileuploadClick} disabled={loader}>
-                        Add Profile Image
-                    </button>
-                </div>
-                <div className={styles.details}>
-                    <input
-                        type="text"
-                        className={cn(styles.inputText, "textbox")}
-                        placeholder="Your Name"
-                        name="name"
-                        onChange={handleChange}
-                        value={profileValues?.name}
-                    ></input>
-                    <textarea
-                        className={cn(
-                            styles.inputText,
-                            "textbox",
-                            styles.textArea
-                        )}
-                        name="bio"
-                        placeholder={"Short bio..."}
-                        maxLength={140}
-                        onChange={handleChange}
-                        value={profileValues?.bio}
-                    />
-                </div>
-                <div className={styles.buttonContainer}>
-                    <input
-                        type="button"
-                        value={"Save and next"}
-                        disabled={
-                            profileValues?.name && profileValues.bio
-                                ? false
-                                : true
-                        }
-                        className={cn("button", styles.input)}
-                        onClick={() => {
-                            val.dispatch({
-                                type: "UPDATE STATE",
-                                data: { name: "aboutUs", value: profileValues },
-                            });
-                            val.dispatch({ type: "incrementTab" });
-                        }}
-                    ></input>
+                    <div className={styles.details}>
+                        <h2>
+                            {editorContextvalues?.state?.preview?.profile?.name}
+                        </h2>
+                        <p>
+                            {editorContextvalues?.state?.preview?.profile?.bio}
+                        </p>
+                    </div>
                 </div>
             </div>
         </>

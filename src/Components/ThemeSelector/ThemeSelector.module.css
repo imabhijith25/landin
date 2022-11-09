@@ -1,0 +1,23 @@
+.ThemeSelector {
+    color: rgb(226, 226, 226);
+}
+.ThemeSelector p{
+    margin-top: 5px;
+}
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    column-gap: 10px;
+}
+.themes{
+    width: 40%;
+    margin-top: 10px;
+    height: 80px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+.themes:hover{
+    border: 2px solid white;
+}

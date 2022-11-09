@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Page from "./Screens/Page/Page";
 import Login from "./Screens/Login/Login";
 import Register from "./Screens/Register/Register";
-import Create from "./Screens/Create/Create";
+
 import Tokyo from "./Layout/Tokyo/Tokyo";
 import { Splash } from "./Screens/Splash/Splash";
-import Dashboard from "./Screens/Dashboard/Dashboard";
+
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from "./Redux/store";
@@ -47,15 +47,6 @@ function App() {
                                 </Page>
                             }
                         />
-                        <Route
-                            path="/create"
-                            exact
-                            element={
-                                <Page authenticate={true}>
-                                    <Create />
-                                </Page>
-                            }
-                        />
 
                         <Route
                             path="/u/:url"
@@ -74,26 +65,6 @@ function App() {
                                 <Splash>
                                     <Tokyo />
                                 </Splash>
-                            }
-                        />
-
-                        <Route
-                            path="/dashboard"
-                            exact
-                            element={
-                                <Page authenticate={true}>
-                                    <Dashboard />
-                                </Page>
-                            }
-                        />
-
-                        <Route
-                            path="/edit"
-                            exact
-                            element={
-                                <Page authenticate={true}>
-                                    <Create edit={true} />
-                                </Page>
                             }
                         />
 
