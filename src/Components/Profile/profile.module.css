@@ -21,6 +21,8 @@
 .details{
     padding-top: 10px;
     margin-left: 15px;
+    max-width: 300px;
+    word-wrap: break-word;
     
 }
 .details h2{
@@ -46,7 +48,65 @@
     cursor: pointer;
 
 }
+.profileSelector {
+    color: rgb(226, 226, 226);
+}
+.profileSelector p{
+    margin-top: 5px;
+}
+.editContainer{
+    margin-top: 30px;
+}
+.info{
+    margin-top: 10px;
+}
+.info label{
+    font-size: 12px;
+    display: block;
+}
+.info input[type="text"]{
+    width: 90%;
+    padding: 10px 7px;
+    border-radius: 4px;
+    border: 1px solid rgb(95, 94, 94);;
+    background-color: transparent;
+    margin-top: 5px;
+    color: #F9F1F1;
+    
+}
+.info textarea{
+    resize: none;
+    width: 90%;
+    padding: 10px 7px;
+    border-radius: 4px;
+    border: 1px solid rgb(95, 94, 94);;
+    background-color: transparent;
+    margin-top: 5px;
+    color: #F9F1F1;
+}
 
+.be p{
+    font-weight: 800 !important;
+    margin-top: 20px;
+   
+    
+}
+.subItems{
+ 
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+  
+}
+.subItems img{
+    margin-top: 5px;
+    height: 14px;
+    width: 14px;
+
+}
+.subItemHolder{
+    margin:15px 0px;
+}
 @media all and (max-width: 800px) {
     .imageCropper{
         width: 64px;
@@ -54,6 +114,10 @@
         position: relative;
         overflow: hidden;
         border-radius: 50%;
+    }
+    .details{
+        max-width: 200px;
+        word-wrap: break-word;
     }
     .details h2{
         font-size: 14px;

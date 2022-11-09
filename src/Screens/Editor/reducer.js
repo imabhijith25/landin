@@ -13,8 +13,8 @@ export const initialState = {
             name: "Avinash",
             bio: "Short bio about what I don and what not",
             social: {
-                twitter: "twitter",
-                instagram: "instagram",
+                Twitter: "twitter",
+                Instagram: "instagram",
             },
         },
     },
@@ -29,10 +29,10 @@ export const reducer = (state = initialState, action) => {
             return { ...state, widgetModal: !state.widgetModal };
 
         case "SET_CURRENT_SELECTED":
+            console.log("here");
             return { ...state, currentSelected: action.data };
 
         case "CHANGE_BACKGROUND":
-            console.log(action);
             return {
                 ...state,
                 preview: {
@@ -40,6 +40,33 @@ export const reducer = (state = initialState, action) => {
                     background: {
                         type: action.data?.type,
                         name: action?.data?.name,
+                    },
+                },
+            };
+
+        case "UPDATE_PROFILE_VALUES":
+            console.log(action);
+            return {
+                ...state,
+                preview: {
+                    ...state.preview,
+                    profile: {
+                        ...state.preview.profile,
+                        [action.data.key]: action.data.value,
+                    },
+                },
+            };
+        case "UPDATE_PROFILE_SOCIAL_VALUES":
+            return {
+                ...state,
+                preview: {
+                    ...state.preview,
+                    profile: {
+                        ...state.preview.profile,
+                        social: {
+                            ...state.preview.profile.social,
+                            [action.data.key]: action.data.value,
+                        },
                     },
                 },
             };

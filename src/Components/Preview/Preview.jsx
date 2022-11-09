@@ -26,6 +26,8 @@ const Preview = () => {
             <div
                 style={{
                     width: windowWidth < 800 ? "100%" : "80%",
+                    backgroundAttachment: "fixed",
+                    overflowY: "scroll",
                     background:
                         themeDictionary[
                             editorContextvalues?.state?.preview?.background

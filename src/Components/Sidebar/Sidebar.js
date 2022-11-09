@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import useWidth from "../../Hooks/useWidth";
 import { EditorContext } from "../../Screens/Editor/Editor";
+import ProfileSelector from "../Profile/ProfileSelector";
 import ThemeSelector from "../ThemeSelector/ThemeSelector";
 import styles from "./sidebar.module.css";
 
@@ -15,7 +16,7 @@ const Sidebar = () => {
                     style={{
                         backgroundColor: "rgb(43, 39, 39)",
                         borderRight: "1px solid rgb(129, 129, 129)",
-                        padding: "20px 14px",
+                        padding: "20px 0px 20px 15px",
                         width: windowWidth < 800 ? "300px" : "20%",
                         position: windowWidth < 800 ? "absolute" : "static",
                         height: windowWidth < 800 ? "100%" : "auto",
@@ -27,6 +28,9 @@ const Sidebar = () => {
                 >
                     {editorContext?.state?.currentSelected == "background" && (
                         <ThemeSelector />
+                    )}
+                    {editorContext?.state?.currentSelected == "profile" && (
+                        <ProfileSelector />
                     )}
                 </div>
             )}

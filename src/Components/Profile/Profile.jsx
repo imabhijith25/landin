@@ -73,9 +73,17 @@ const Profile = () => {
         );
     };
 
+    const handleClick = (e) => {
+        e.stopPropagation();
+        editorContextvalues.dispatch({
+            type: "SET_CURRENT_SELECTED",
+            data: "profile",
+        });
+    };
+
     return (
         <>
-            <div className={styles.profileContainer}>
+            <div className={styles.profileContainer} onClick={handleClick}>
                 <div className={styles.flexer}>
                     <div className={styles.imageCropper}>
                         <img
@@ -95,14 +103,45 @@ const Profile = () => {
                         <p>
                             {editorContextvalues?.state?.preview?.profile?.bio}
                         </p>
-
+                        <div className={styles.subItemHolder}>
+                            {editorContextvalues?.state?.preview?.profile
+                                ?.Location && (
+                                <div className={styles.subItems}>
+                                    <img src="/images/Icons/map-pin.svg"></img>
+                                    <p>
+                                        {
+                                            editorContextvalues?.state?.preview
+                                                ?.profile?.Location
+                                        }
+                                    </p>
+                                </div>
+                            )}
+                            {editorContextvalues?.state?.preview?.profile
+                                ?.Email && (
+                                <div className={styles.subItems}>
+                                    <img src="/images/social/mail.svg"></img>
+                                    <p>
+                                        {
+                                            editorContextvalues?.state?.preview
+                                                ?.profile?.Email
+                                        }
+                                    </p>
+                                </div>
+                            )}
+                        </div>
                         <div className={styles.socialHolder}>
                             {Object.keys(
                                 editorContextvalues?.state?.preview?.profile
                                     ?.social
-                            ).map((item, index) => (
-                                <img src={`/images/social/${item}.svg`}></img>
-                            ))}
+                            ).map(
+                                (item, index) =>
+                                    editorContextvalues?.state?.preview?.profile
+                                        ?.social[item] != "" && (
+                                        <img
+                                            src={`/images/social/${item}.svg`}
+                                        ></img>
+                                    )
+                            )}
                         </div>
                     </div>
                 </div>
