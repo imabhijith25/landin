@@ -1,0 +1,5 @@
+.layout{
+    display: flex;
+    position: relative;
+    height: calc(100vh - 50px);
+}

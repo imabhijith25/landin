@@ -12,6 +12,7 @@ import { persistStore } from "redux-persist";
 import store from "./Redux/store";
 import { Provider } from "react-redux";
 import Homepage from "./Screens/Homepage/Homepage";
+import Editor from "./Screens/Editor/Editor";
 let persistor = persistStore(store);
 function App() {
     return (
@@ -95,6 +96,8 @@ function App() {
                                 </Page>
                             }
                         />
+
+                        <Route path="/editor" exact element={<Editor />} />
                     </Routes>
                 </PersistGate>
             </Provider>
