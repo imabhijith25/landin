@@ -106,6 +106,18 @@
 }
 .subItemHolder{
     margin:15px 0px;
+    justify-content: flex-start;
+}
+.uploadContainer{
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+
+}
+.uploadContainer button{
+    padding: 7px 10px;
+    margin-left: 20px;
+    width: 50%;
 }
 @media all and (max-width: 800px) {
     .imageCropper{
@@ -129,5 +141,10 @@
     height: 18px;
     width: 18px;
         
+    }
+    .uploadContainer button{
+        padding: 7px 10px;
+        margin-left: 20px;
+        width: 60%;
     }
 }
